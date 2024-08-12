@@ -1,0 +1,51 @@
+const task=document.getElementById("task")
+const description=document.getElementById("description")
+const table=document.getElementById("table")
+const hours=document.getElementById("hours")
+const minutes=document.getElementById("minutes")
+const seconds=document.getElementById("seconds")
+const button=document.getElementById("timer-select")
+let intervalId=0
+let s = 0
+let m = 0
+let h = 0
+function startTimer(){
+    if(button.textContent ==='START') {
+        
+        intervalId = setInterval(function() {
+            s++
+            if(s >= 60) {
+                s = 0
+                m++}
+            if(m >= 60) {
+                m = 0
+                h++
+
+            }
+           s=seconds.textContent = s.toString().padStart(2, '0')
+           m=minutes.textContent = m.toString().padStart(2, '0')
+           h=hours.textContent = h.toString().padStart(2, '0')
+           },1000)
+           button.textContent ='STOP'
+           button.style.setProperty('background-color',"red")
+        
+    }
+    else if(button.textContent ==='STOP'){
+        var tableRef = document.getElementById('table').getElementsByTagName('tbody')[0];
+        var newRow = tableRef.insertRow(tableRef.rows.length);
+        newRow.innerHTML =`<tr> <td>${task.value}</td> <td>${description.value}</td> <td>${hours.textContent}:${minutes.textContent}:${seconds.textContent}</td> </tr>` 
+         
+        task.value=""
+        description.value=""
+        hours.value=""
+        minutes.value=""
+        seconds.value=""
+        clearInterval(intervalId)
+        seconds.textContent ='00'
+        minutes.textContent ='00'
+        hours.textContent ='00'
+        button.textContent ='START'
+        button.style.setProperty('background-color','green')
+    }
+}
+button.addEventListener("click",startTimer)

@@ -1,0 +1,33 @@
+<html>
+    <head><link rel="stylesheet" href="timer.css"></head>
+    <body>
+        <input type="
+        text" placeholder="Task" id="task"/><br><br>
+        <input type="
+        text" placeholder="Description" id="description"/><br><br>
+        <button type="button" id="timer-select">START</button><br><br>
+        <div class="timer">
+            <p id="hours">00</p>
+            <p>:</p>
+            <p id="minutes">00</p>
+            <p>:</p>
+            <p id="seconds">00</p>&nbsp;
+          </div><br>
+        <table border="2" cellspacing="0" id="table" class="table1">
+            <tr>
+            <th>TASK</th>
+            <th>DESCRIPTION</th>
+            <th>DURATION</th></tr>
+            <tr>
+            <td>meeting</td>
+            <td>client-meeting</td>
+            <td>00:14:30</td></tr>
+            <tr>
+            <td>review</td>
+            <td>product-review</td>
+            <td>00:45:30</td>
+        </tr>
+        </table>
+    </body>
+    <script type="module" src="./timer.js"></script>
+    </html>

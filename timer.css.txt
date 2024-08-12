@@ -1,0 +1,10 @@
+tr:nth-child(odd){
+    background-color: aqua;
+
+}
+tr:nth-child(even){
+    background-color:lightpink;
+
+}
+p{display:inline;
+}
